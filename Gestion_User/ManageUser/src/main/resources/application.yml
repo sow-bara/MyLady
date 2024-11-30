@@ -1,0 +1,36 @@
+server:
+  port: 9110
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/manageuser
+    username: association_user
+    password: passer
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sowbara0211@gmail.com
+    password: bmbmwjecierceohe
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# Configuration Spring Security & JWT
+security:
+  jwt:
+    secret: +GNIOv4Ej+M2H8CHbanRUZwdefRsDTnJlS6czf1SSp4=
+    expiration: 3600000  # Expiration du token en millisecondes
+    header: "Authorization"
+    prefix: "Bearer "
+
+# Activer le mode debug pour l'application
+debug: true
